@@ -1,3 +1,4 @@
+
 import React from 'react';
 import '../types';
 
@@ -42,8 +43,30 @@ const Footer: React.FC<FooterProps> = ({ onAdminToggle, isAdmin }) => {
             </ul>
           </div>
         </div>
+
+        {/* 사업자 정보 섹션: 김순남, 노다지부동산 정보 반영 및 가독성 최적화 */}
+        <div className="pt-10 border-t border-neutral-200/50 mb-10">
+          <div className="flex flex-col md:flex-row flex-wrap gap-x-10 gap-y-4 text-[14px] text-neutral-500 font-medium">
+            <div className="flex gap-2.5">
+              <span className="font-bold text-neutral-900">성명</span>
+              <span>김순남</span>
+            </div>
+            <div className="flex gap-2.5">
+              <span className="font-bold text-neutral-900">상호</span>
+              <span>노다지부동산</span>
+            </div>
+            <div className="flex gap-2.5">
+              <span className="font-bold text-neutral-900">사업자번호</span>
+              <span>146-03-02907</span>
+            </div>
+            <div className="flex gap-2.5">
+              <span className="font-bold text-neutral-900">주소</span>
+              <span>부산시 사상구 엄궁중로 36 1층</span>
+            </div>
+          </div>
+        </div>
         
-        <div className="pt-10 border-t border-neutral-200/50 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2">
             <p className="text-[11px] text-neutral-400 font-bold uppercase tracking-widest">© 2024 Eomgung Haneulchae.</p>
             <span className="w-1 h-1 rounded-full bg-neutral-300"></span>
