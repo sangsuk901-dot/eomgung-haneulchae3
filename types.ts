@@ -37,9 +37,29 @@ export interface WorkflowPlan {
 }
 
 /**
- * Augment the 'react' module to include 'iconify-icon' in JSX.IntrinsicElements.
- * This ensures that standard HTML elements (div, span, nav, etc.) are preserved
- * via declaration merging with React's core types.
+ * Augment the global JSX namespace to include 'iconify-icon' for custom elements.
+ * This is the standard way to declare custom elements in a TypeScript environment.
+ */
+declare global {
+  namespace JSX {
+    interface IntrinsicElements {
+      'iconify-icon': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement> & {
+        icon?: string;
+        width?: string | number;
+        height?: string | number;
+        flip?: string;
+        rotate?: string | number;
+        mode?: string;
+        class?: string;
+        className?: string;
+      }, HTMLElement>;
+    }
+  }
+}
+
+/**
+ * Also augment the React.JSX namespace, which is frequently used by modern React versions (18+)
+ * and TypeScript configurations (particularly with jsx: react-jsx) to define available elements.
  */
 declare module 'react' {
   namespace JSX {
